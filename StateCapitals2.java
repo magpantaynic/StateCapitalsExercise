@@ -59,13 +59,47 @@ public class StateCapitals2 {
             System.out.print(currentKey + ", ");
         }
         
+        // Create a small knowledge game
+        // Choose a random state and ask the user for its capital
+        // Then tell the user if they got it right
 
-        
+        List<String> guessKeys = new ArrayList<>(keys);
 
+        Random ranState = new Random();
+        List<String> guessKeys2 = guessKeys;
+        int guessState = ranState.nextInt(guessKeys2.size());
+
+        String[] states = stateCaps.keySet().toArray(new String[0]);
+        String randomState = states[guessState];
+
+        String capitalAnswer = stateCaps.get(randomState);
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\nREADY TO TEST YOUR KNOWLEDGE? WHAT IS THE CAPITAL OF ' " + guessKeys2.get(guessState) + "' ?");
+        String userAnswer = scanner.nextLine();
+
+
+                if(userAnswer.equalsIgnoreCase(capitalAnswer))
+                {
+                    System.out.println("Nice work!" + userAnswer.toUpperCase() + "is correct!");
+                }
+                else
+                {
+                    System.out.println("No sorry that's incorrect. Try again!");
+                }
+ 
+
+
+
+        // Stretch goal: ask user how many they want to guess and choose that many states.
+                // System.out.println("How many states would you like to guess?");
+                // userChoice = scan.nextInt();
+
+        // Stretch goal2: Give them a point for each correct guess, subtract one for each miss
+
+        // Stretch goal3: Print out their total score at the end
     }
 
     
-
-
     
 }
