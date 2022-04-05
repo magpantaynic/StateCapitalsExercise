@@ -30,7 +30,7 @@ public class StateCapitals {
         //print states
         System.out.println("STATES:");
         System.out.println("---------------------");
-        Map<String, String> map = new TreeMap<>(stateCapitals);
+        Map<String, String> map = new TreeMap<>(stateCaps);
         Set keys = map.entrySet();
         Iterator iterator = keys.iterator();
         while(iterator.hasNext()) {
