@@ -8,6 +8,8 @@ import java.io.FileReader;
 import java.util.Random;
 import java.io.FileNotFoundException;
 import java.io.File;
+import java.util.List;
+import java.util.ArrayList;
 
 /*
     -Create a HashMap to hold the bames of all the states and their corresponding capital names.
@@ -27,22 +29,22 @@ public class StateCapitals2 {
         File myFile = new File("StateCapitals.txt");
         Scanner scan = new Scanner(myFile);
 
-        // You need a while loop so it can read everything in the text to convert to string
-        while(scan.hasNextLine())
-        {
+            // You need a while loop so it can read everything in the text to convert to string
+            while(scan.hasNextLine())
+            {
 
-            String data = scan.nextLine();
-            //System.out.println(data); <- Not sure if printing file is needed on this line but going to leave it for now as a comment
-            String[] textSplit = data.split("::");
-            //State name is the key, & the capital name is the value.
-            stateCaps.put(textSplit[0], textSplit[1]);
+                String data = scan.nextLine();
+                //System.out.println(data); <- Not sure if printing file is needed on this line but going to leave it for now as a comment
+                String[] textSplit = data.split("::");
+                //State name is the key, & the capital name is the value.
+                stateCaps.put(textSplit[0], textSplit[1]);
 
-        }
+            }
         scan.close();
         } 
         catch (FileNotFoundException error) {
-        System.out.println("An error occurred");
-        error.printStackTrace();
+            System.out.println("An error occurred");
+            error.printStackTrace();
         }
 
         //Print how many state/capital pairs are inside your map
@@ -103,3 +105,4 @@ public class StateCapitals2 {
     
     
 }
+
